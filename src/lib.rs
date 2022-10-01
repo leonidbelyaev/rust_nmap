@@ -15,6 +15,7 @@ pub struct nmap_run {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub args: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_i32")]
     pub start: Option<i32>,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -78,6 +79,7 @@ pub struct scaninfo {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub protocol: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_u32")]
     pub numservices: Option<u32>,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -90,6 +92,7 @@ pub struct scaninfo {
 #[allow(non_camel_case_types)]
 pub struct verbose {
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_u32")]
     pub level: Option<u32>,
 }
@@ -97,6 +100,7 @@ pub struct verbose {
 #[allow(non_camel_case_types)]
 pub struct debugging {
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_u32")]
     pub level: Option<u32>,
 }
@@ -107,6 +111,7 @@ pub struct task_info {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub task: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_i32")]
     pub time: Option<i32>,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -119,15 +124,19 @@ pub struct task_progress_info {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub task: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_i32")]
     pub time: Option<i32>,
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_f32")]
     pub percent: Option<f32>,
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_u32")]
     pub remaining: Option<u32>,
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_u32")]
     pub etc: Option<u32>,
 }
@@ -170,9 +179,11 @@ pub struct element {
 #[allow(non_camel_case_types)]
 pub struct host {
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_i32")]
     pub starttime: Option<i32>,
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_i32")]
     pub endtime: Option<i32>,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -256,6 +267,7 @@ pub struct trace {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proto: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_u32")]
     pub port: Option<u32>,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -267,9 +279,11 @@ pub struct trace {
 #[allow(non_camel_case_types)]
 pub struct hop {
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_f32")]
     pub ttl: Option<f32>,
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_f32")]
     pub rtt: Option<f32>,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -300,6 +314,7 @@ pub struct ipidsequence {
 #[allow(non_camel_case_types)]
 pub struct uptime {
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_u32")]
     pub seconds: Option<u32>,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -310,6 +325,7 @@ pub struct uptime {
 #[allow(non_camel_case_types)]
 pub struct distance {
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_i32")]
     pub value: Option<i32>,
 }
@@ -333,6 +349,7 @@ pub struct portused {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proto: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_u32")]
     pub portid: Option<u32>,
 }
@@ -343,9 +360,11 @@ pub struct osmatch {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_u32")]
     pub accuracy: Option<u32>,
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_u32")]
     pub line: Option<u32>,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -362,6 +381,7 @@ pub struct osclass {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub r#type: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_u32")]
     pub accuracy: Option<u32>,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -385,6 +405,7 @@ pub struct extraports {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub state: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_u32")]
     pub count: Option<u32>,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -397,6 +418,7 @@ pub struct reason {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub reason: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_u32")]
     pub count: Option<u32>,
 }
@@ -409,6 +431,7 @@ pub struct status {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub reason: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_f32")]
     pub reason_ttl: Option<f32>,
 }
@@ -446,6 +469,7 @@ pub struct port {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub protocol: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_u32")]
     pub portid: Option<u32>,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -466,6 +490,7 @@ pub struct state {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub reason: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_f32")]
     pub reason_ttl: Option<f32>,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -485,6 +510,7 @@ pub struct service {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_u32")]
     pub conf: Option<u32>,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -551,11 +577,13 @@ pub struct runstats {
 #[allow(non_camel_case_types)]
 pub struct finished {
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_i32")]
     pub time: Option<i32>,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub timestr: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_f32")]
     pub elapsed: Option<f32>,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -570,12 +598,15 @@ pub struct finished {
 #[allow(non_camel_case_types)]
 pub struct hoststats {
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_i32")]
     pub up: Option<i32>,
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_i32")]
     pub down: Option<i32>,
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     #[serde(deserialize_with = "empty_str_to_none_i32")]
     pub total: Option<i32>,
 }
@@ -666,7 +697,6 @@ fn empty_int_as_none() {
 <nmaprun start="1649957085" profile_name="" xmloutputversion="1.04" scanner="nmap" version="7.92" startstr="Thu Apr 14 13:24:45 2022" args="nmap -T4 -A -v --unique -iL neu_as">
   <verbose level="1"></verbose>
   <debugging level="0"></debugging>
-
   <host comment="">
     <status state="down"></status>
     <address addrtype="ipv4" vendor="" addr="44.44.126.0"></address>
@@ -681,7 +711,9 @@ fn empty_int_as_none() {
   </runstats>
 </nmaprun>
 "#;
+
     let result = parse_nmap_xml_str(input).unwrap();
+
     assert_eq!(
         result
             .host
