@@ -635,7 +635,7 @@ pub fn parse_nmap_xml_file(filename: &str) -> BoxResult<nmap_run> {
     Ok(nmap_run_info)
 }
 
-pub fn parse_nmap_xml_bytes(bytes: &'static [u8]) -> BoxResult<nmap_run> {
+pub fn parse_nmap_xml_bytes(bytes: &[u8]) -> BoxResult<nmap_run> {
     let xml_info = match std::str::from_utf8(bytes) {
         Ok(xml_info) => xml_info,
         Err(err) => return Err(Box::new(err) as Box<dyn std::error::Error>),
